@@ -1,0 +1,10 @@
+services:
+  productpage:
+    build: .
+    image: ghcr.io/supakkavee/bookinfo-productpage:dev
+    ports:
+      - "8083:9080"
+    environment:
+      DETAILS_HOSTNAME: http://details:9080/details
+      RATINGS_HOSTNAME: http://ratings:8080/
+      REVIEWS_HOSTNAME: http://reviews:9080/
