@@ -4,7 +4,7 @@ productpage:
   tag: dev
   replicas: 1
   imagePullSecrets: registry-bookinfo
-  port: 8080
+  port: 8083
 ingress:
   annotations:
     kubernetes.io/ingress.class: nginx
