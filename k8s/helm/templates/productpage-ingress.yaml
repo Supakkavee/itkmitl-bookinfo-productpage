@@ -17,4 +17,4 @@ spec:
           service:
             name: bookinfo-dev-productpage
             port:
-              number: 8080
+              number: 8083

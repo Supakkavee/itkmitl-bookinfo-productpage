@@ -1,0 +1,18 @@
+productpage:
+  namespace: student14-bookinfo-dev
+  image: ghcr.io/supakkavee/bookinfo-productpage
+  tag: dev
+  replicas: 1
+  imagePullSecrets: registry-bookinfo
+  port: 8080
+ingress:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  host: itkmitl.bookinfo.dev.opsta.net
+  path: "/student14/productpage(/|$)(.*)"
+  serviceType: ClusterIP
+extraEnv:
+  RATINGS_HOSTNAME: http://bookinfo-dev-ratings:8080
+  REVIEWS_HOSTNAME: http://bookinfo-dev-reviews:8082
+  DETAILS_HOSTNAME: http://bookinfo-dev-details:8081
